@@ -12,9 +12,10 @@ else
         echo "Proceeding to installation step :"
     }
 fi
-yum install mysql -y
+sudo yum install mysql -y
 status=$($?)
 if ($status -gt 0)
+then
 {
     exit 1
     echo "installation failed, please verify the logs"
