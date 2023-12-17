@@ -25,8 +25,8 @@ then
 }
 fi
 
-yum install $1 -y
-validate
+yum install mysql -y
+validate $? "Installing mysql"
 
-yum install $2 -y
-validate
+yum install git -y
+validate $? "Installing git"
