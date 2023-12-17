@@ -9,12 +9,9 @@ then
 { 
     echo "$user is not authorized to install! please get the root access to proceed."
 }
-else 
-    {
-        echo "Proceeding to installation step :"
-        execute()
-
-    }
+else { 
+    echo "Proceeding to installation step :"
+     execute()}
 fi
 }
 
