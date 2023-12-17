@@ -22,6 +22,7 @@ fi
 if [ $user -ne 0 ]
 then 
 echo -e "$R You are not a root user, login as root user to proceed $N"
+exit 1
 else
 echo -e "$G Proceeding for installation as ROOT user $N"
 fi
