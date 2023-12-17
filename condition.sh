@@ -12,7 +12,7 @@ else
         echo "Proceeding to installation step :"
     }
 fi
-sudo yum install mysql -y
+yum install mysql -y
 if [ $? -ne 0 ] 
 then
 {
@@ -24,7 +24,7 @@ else
 echo "MySQL Installation complete"
 }
 fi
-sudo yum install git -y
+yum install git -y
 if [ $? -ne 0 ] 
 then
 {

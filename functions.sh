@@ -11,7 +11,8 @@ then
 }
 else { 
     echo "Proceeding to installation step :"
-     execute()}
+    execute
+     }
 fi
 }
 
