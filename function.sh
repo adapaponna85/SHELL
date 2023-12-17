@@ -3,12 +3,12 @@ user=$(id -u)
 
 VALIDATE()
 {
-if [ $? -ne 0 ]
+if [ $1 -ne 0 ]
 then
-echo "Installation failed"
+echo "Error: {$2} failed"
 exit 1
 else
-echo "Installation success"
+echo "{$2} success"
 fi
 }
 
@@ -20,7 +20,7 @@ echo "Proceeding for installation as ROOT user"
 fi
 
 yum install mysql -y
-VALIDATE
+VALIDATE $? "Installing mysql"
 
 yum install git -y
-VALIDATE
+VALIDATE $? "Installing git"
