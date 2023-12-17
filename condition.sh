@@ -13,11 +13,10 @@ else
     }
 fi
 sudo yum install mysql -y
-install_state=$($?)
-if ($install_state -gt 0)
+if (($?) -gt 0)
 then
 {
-    echo "installation failed with exit status: {$install_State}"
+    echo "installation failed with exit status: {$?}"
     exit 1
 }
 else
