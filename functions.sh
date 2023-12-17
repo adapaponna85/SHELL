@@ -19,7 +19,7 @@ fi
 
 if [ $user -ne 0 ]
 then
-   echo -e "$R $user is not authorized to install! please get the root access to proceed. $N"
+   echo -e "$R You are not authorized to install! please get the root access to proceed. $N"
    exit 1
 else
 echo -e "$G Proceeding for installation $N" 
