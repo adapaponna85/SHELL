@@ -21,6 +21,18 @@ then
 }
 else
 {
-echo "Installation complete"
+echo "MySQL Installation complete"
+}
+fi
+sudo yum install git -y
+if [ $? -ne 0 ] 
+then
+{
+    echo "installation failed with exit status: {$?}"
+    exit 1
+}
+else
+{
+echo "GIT Installation complete"
 }
 fi
