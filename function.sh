@@ -4,22 +4,26 @@ user=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOG_FILE="/tmp/$0-$TIMESTAMP.log"
 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+
 VALIDATE()
 {
 if [ $1 -ne 0 ]
 then
-echo "Error: $2 failed"
+echo "$R Error: $2 failed $N"
 exit 1
 else
-echo "$2 success"
+echo "$G $2 success $N"
 fi
 }
 
 if [ $user -ne 0 ]
 then 
-echo "You are not a root user, login as root user to proceed"
+echo "$R You are not a root user, login as root user to proceed $N"
 else
-echo "Proceeding for installation as ROOT user"
+echo "$G Proceeding for installation as ROOT user $N"
 fi
 
 yum install mysql -y &>> LOG_FILE
