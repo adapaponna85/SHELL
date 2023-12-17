@@ -8,25 +8,21 @@ N="\e[0n"
 
 validate ()
 {
-    if [ $? -ne 0 ] 
-then
-{
+if [ $? -ne 0 ] 
+ then
     echo -e "$R installation failed with exit status: {$?} $N"
     exit 1
-}
 else
-{
-echo -e "$G Installation complete $N"
-}
+    echo -e "$G Installation complete $N"
 fi
 }
 
 if [ $user -ne 0 ]
 then
-{ 
-    echo -e "$R $user is not authorized to install! please get the root access to proceed. $N"
-    exit 1
-}
+   echo -e "$R $user is not authorized to install! please get the root access to proceed. $N"
+   exit 1
+else
+echo -e "$G Proceeding for installation $N" 
 fi
 
 yum install mysql -y
