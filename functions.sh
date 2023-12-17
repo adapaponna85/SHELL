@@ -25,8 +25,8 @@ then
 }
 fi
 
-yum install mysql -y
+yum install $1 -y
 validate
 
-yum install git -y
+yum install $2 -y
 validate
