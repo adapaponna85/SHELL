@@ -2,21 +2,7 @@
 
 user=$(id -u)
 
-validate_user ()
-{
-    if ($user -gt 0)
-then
-{ 
-    echo "$user is not authorized to install! please get the root access to proceed."
-}
-else { 
-    echo "Proceeding to installation step :"
-    execute
-     }
-fi
-}
-
-status ()
+validate ()
 {
     if [ $? -ne 0 ] 
 then
@@ -26,15 +12,21 @@ then
 }
 else
 {
-echo "MySQL Installation complete"
+echo "Installation complete"
 }
 fi
 }
 
-execute() 
-{
-sudo yum install mysql -y
-status ()
-sudo yum install git -y
-status ()
+if [ $user -ne 0 ]
+then
+{ 
+    echo "$user is not authorized to install! please get the root access to proceed."
+    exit 1
 }
+fi
+
+yum install mysql -y
+validate
+
+yum install git -y
+validate
