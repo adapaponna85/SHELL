@@ -6,6 +6,7 @@ if ($user -gt 0)
 then
 { 
     echo "$user is not authorized to install! please get the root access to proceed."
+    exit 1
 }
 else 
     {
