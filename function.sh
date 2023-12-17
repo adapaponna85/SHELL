@@ -5,10 +5,10 @@ VALIDATE()
 {
 if [ $1 -ne 0 ]
 then
-echo "Error: {$2} failed"
+echo "Error: $2 failed"
 exit 1
 else
-echo "{$2} success"
+echo "$2 success"
 fi
 }
 
