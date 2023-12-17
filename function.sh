@@ -12,18 +12,18 @@ VALIDATE()
 {
 if [ $1 -ne 0 ]
 then
-echo "$R Error: $2 failed $N"
+echo -e "$R Error: $2 failed $N"
 exit 1
 else
-echo "$G $2 success $N"
+echo -e "$G $2 success $N"
 fi
 }
 
 if [ $user -ne 0 ]
 then 
-echo "$R You are not a root user, login as root user to proceed $N"
+echo -e "$R You are not a root user, login as root user to proceed $N"
 else
-echo "$G Proceeding for installation as ROOT user $N"
+echo -e "$G Proceeding for installation as ROOT user $N"
 fi
 
 yum install mysql -y &>> LOG_FILE
