@@ -2,16 +2,12 @@
 
 user=$(id -u)
 
-if ($user -gt 0)
+if [ $user -ne 0 ]
 then
 { 
     echo "$user is not authorized to install! please get the root access to proceed."
     exit 1
 }
-else 
-    {
-        echo "Proceeding to installation step :"
-    }
 fi
 yum install mysql -y
 if [ $? -ne 0 ] 
