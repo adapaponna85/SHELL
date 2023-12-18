@@ -5,6 +5,8 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0n"
 
+TIMESTAMP="$date +%F %H %M %s"
+echo $TIMESTAMP
 if [ $user -ne 0 ]
 then
 echo -e "$R You are not authorized, please login as Root user $N"
