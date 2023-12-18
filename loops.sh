@@ -26,8 +26,14 @@ else
 echo -e "$G Running as Root user $N"
 fi
 
-yum install git -y &>> LOGFILE
-VALIDATE $? "Installing Git"
-
-yum install mysql -y &>> LOGFILE
-VALIDATE $? "Installing mysql"
+for package in $@
+do
+yum list installed $package &>> LOGFILE
+if [ $? -ne 0 ]
+then 
+yum install $package -y &>> LOGFILE
+VALIDATE $? "Installing $package"
+else
+echo -e "$Y $package is already installed $N"
+fi
+done
