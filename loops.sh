@@ -1,7 +1,7 @@
 #!/bin/bash
 user=$(id -u)
-R="\e[32m"
-G="\e[33m"
+R="\e[33m"
+G="\e[32m"
 Y="\e[31m"
 N="\e[0n"
 
