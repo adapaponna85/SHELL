@@ -5,7 +5,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0n"
 
-TIMESTAMP="$date +%F %H %M %s"
+TIMESTAMP=$(date +%F %H %M %s)
 echo $TIMESTAMP
 if [ $user -ne 0 ]
 then
